@@ -46,24 +46,58 @@ public class Ejercicio6 extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 0, 0));
         jLabel1.setText("Periodico");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 50, 20));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 80, 20));
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 255));
         jLabel2.setText("Numero De Palabras");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, -1, -1));
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 255));
         jLabel3.setText("Tamaño En Centimetros");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 255));
         jLabel4.setText("Numero De Colores");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, -1));
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 255));
         jLabel5.setText("Monto Total");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, -1, -1));
-        jPanel1.add(txtNumPalabras, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, 240, -1));
-        jPanel1.add(txtTamaño, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 240, -1));
-        jPanel1.add(txtNumeroColores, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 240, -1));
-        jPanel1.add(txtMontoTotak, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 240, -1));
+
+        txtNumPalabras.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNumPalabrasKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtNumPalabras, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 240, -1));
+
+        txtTamaño.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTamañoKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtTamaño, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 240, -1));
+
+        txtNumeroColores.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNumeroColoresKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtNumeroColores, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 240, -1));
+
+        txtMontoTotak.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtMontoTotakKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtMontoTotak, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 240, -1));
 
         jButton1.setText("CALCULAR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -71,10 +105,15 @@ public class Ejercicio6 extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, -1, -1));
 
         jButton2.setText("BORRAR");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, -1, -1));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -84,7 +123,7 @@ public class Ejercicio6 extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 298, Short.MAX_VALUE)
         );
 
         pack();
@@ -118,6 +157,51 @@ public class Ejercicio6 extends javax.swing.JFrame {
     MontoTotal= String.valueOf(op4);
     txtMontoTotak.setText(MontoTotal);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    txtNumPalabras.setText("");
+    txtTamaño.setText("");
+    txtNumeroColores.setText("");
+    txtMontoTotak.setText("");
+    
+    txtNumPalabras.requestFocusInWindow();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void txtNumPalabrasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumPalabrasKeyTyped
+    char c=evt.getKeyChar();
+    
+    if(!Character.isDigit(c)){
+    getToolkit().beep();
+    evt.consume();
+    }
+    }//GEN-LAST:event_txtNumPalabrasKeyTyped
+
+    private void txtTamañoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTamañoKeyTyped
+    char c=evt.getKeyChar();
+    
+    if(!Character.isDigit(c)){
+    getToolkit().beep();
+    evt.consume();
+    }
+    }//GEN-LAST:event_txtTamañoKeyTyped
+
+    private void txtNumeroColoresKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumeroColoresKeyTyped
+    char c=evt.getKeyChar();
+    
+    if(!Character.isDigit(c)){
+    getToolkit().beep();
+    evt.consume();
+    }
+    }//GEN-LAST:event_txtNumeroColoresKeyTyped
+
+    private void txtMontoTotakKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMontoTotakKeyTyped
+    char c=evt.getKeyChar();
+    
+    if(!Character.isDigit(c)){
+    getToolkit().beep();
+    evt.consume();
+    }
+    }//GEN-LAST:event_txtMontoTotakKeyTyped
 
     /**
      * @param args the command line arguments
