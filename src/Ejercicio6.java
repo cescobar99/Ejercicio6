@@ -92,6 +92,7 @@ public class Ejercicio6 extends javax.swing.JFrame {
         });
         jPanel1.add(txtNumeroColores, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 240, -1));
 
+        txtMontoTotak.setEditable(false);
         txtMontoTotak.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtMontoTotakKeyTyped(evt);
